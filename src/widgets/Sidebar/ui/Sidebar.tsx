@@ -33,6 +33,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
                 theme={ButtonTheme.BACKGROUND_INVERTED}
                 className={cls.collapseBtn}
                 onClick={onToggle}
+                data-testid="toggle-btn"
             >
                 {collapsed ? ">" : "<"}
             </Button>

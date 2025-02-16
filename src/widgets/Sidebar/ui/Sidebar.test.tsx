@@ -1,23 +1,26 @@
+import { MemoryRouter } from "react-router-dom";
+import { JSX } from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { Sidebar } from "./Sidebar";
 import { ThemeProvider } from "app/providers/ThemeProvider";
-import { JSX } from "react";
 
 const renderWithProviders = (component: JSX.Element) => {
-    return render(<ThemeProvider>{component}</ThemeProvider>);
+    return render(
+        <MemoryRouter>
+            <ThemeProvider>{component}</ThemeProvider>
+        </MemoryRouter>
+    );
 };
 
 describe("Sidebar", () => {
     test("renders Sidebar", () => {
         renderWithProviders(<Sidebar />);
-        expect(
-            screen.getByRole("button", { name: /toggle/i })
-        ).toBeInTheDocument();
+        expect(screen.getByTestId("toggle-btn")).toBeInTheDocument();
     });
 
     test("toggles collapsed state on button click", () => {
         renderWithProviders(<Sidebar />);
-        const toggleButton = screen.getByRole("button", { name: /toggle/i });
+        const toggleButton = screen.getByTestId("toggle-btn");
 
         const sidebar = screen.getByRole("complementary");
         expect(sidebar).not.toHaveClass("collapsed");
