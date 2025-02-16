@@ -52,3 +52,33 @@ export const OutlineDark: Story = {
         ),
     ],
 };
+
+export const BackgroundTheme: Story = {
+    args: {
+        theme: ButtonTheme.BACKGROUND,
+    },
+    decorators: [
+        (Story) => (
+            <ThemeProvider>
+                <div className={`app ${Theme.DARK}`}>
+                    <Story />
+                </div>
+            </ThemeProvider>
+        ),
+    ],
+};
+
+export const BackgroundInverted: Story = {
+    args: {
+        theme: ButtonTheme.BACKGROUND_INVERTED,
+    },
+    decorators: [
+        (Story) => (
+            <ThemeProvider>
+                <div className={`app ${Theme.DARK}`}>
+                    <Story />
+                </div>
+            </ThemeProvider>
+        ),
+    ],
+};

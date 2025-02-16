@@ -1,3 +1,4 @@
+import { BrowserRouter } from "react-router-dom";
 import type { Meta, StoryObj } from "@storybook/react";
 import { Theme, ThemeProvider } from "app/providers/ThemeProvider";
 import { Sidebar } from "./Sidebar";
@@ -20,11 +21,13 @@ export const Light: Story = {
     args: {},
     decorators: [
         (Story) => (
-            <ThemeProvider>
-                <div className={`app ${Theme.LIGHT}`}>
-                    <Story />
-                </div>
-            </ThemeProvider>
+            <BrowserRouter>
+                <ThemeProvider>
+                    <div className={`app ${Theme.LIGHT}`}>
+                        <Story />
+                    </div>
+                </ThemeProvider>
+            </BrowserRouter>
         ),
     ],
 };
@@ -33,11 +36,13 @@ export const Dark: Story = {
     args: {},
     decorators: [
         (Story) => (
-            <ThemeProvider>
-                <div className={`app ${Theme.DARK}`}>
-                    <Story />
-                </div>
-            </ThemeProvider>
+            <BrowserRouter>
+                <ThemeProvider>
+                    <div className={`app ${Theme.DARK}`}>
+                        <Story />
+                    </div>
+                </ThemeProvider>
+            </BrowserRouter>
         ),
     ],
 };
