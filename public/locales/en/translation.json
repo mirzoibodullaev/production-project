@@ -5,6 +5,11 @@
     "Обновить страницу": "Refresh the page",
     "Короткий язык": "En",
     "Войти": "Log in",
+    "Выйти": "Log out",
     "Главная": "Main",
-    "О сайте": "About "
+    "О сайте": "About",
+    "Вы ввели неверный логин или пароль": "You entered an incorrect username or password",
+    "Форма авторизации": "Authorization Form",
+    "Введите username": "Enter username",
+    "Введите пароль": "Enter password"
 }

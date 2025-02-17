@@ -1,0 +1,22 @@
+.Input {
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 16px;
+    border: 2px solid var(--primary-color);
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+    &:focus {
+        border-color: var(--inverted-primary-color);
+    }
+
+    &:disabled {
+        background-color: var(--bg-color);
+        cursor: not-allowed;
+    }
+
+    &::placeholder {
+        color: #999;
+    }
+}
