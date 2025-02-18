@@ -1,4 +1,4 @@
-import webpack from "webpack";
+import webpack, { DefinePlugin } from "webpack";
 import path from "path";
 import { BuildPath } from "../config/build/types/config";
 import { buildCssLoader } from "../config/build/loaders/buildCssLoader";
@@ -30,6 +30,11 @@ export default ({ config }: { config: webpack.Configuration }) => {
     config.resolve?.modules?.push(paths.src);
     config.resolve?.extensions?.push(".ts", ".tsx");
     config.module?.rules?.push(buildCssLoader(true));
+    config.plugins?.push(
+        new DefinePlugin({
+            __IS_DEV__: true,
+        })
+    );
 
     return config;
 };
