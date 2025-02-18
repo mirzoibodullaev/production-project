@@ -1,20 +1,38 @@
-import { ReducersMapObject, configureStore } from "@reduxjs/toolkit";
-import { StateSchema } from "./StateSchema";
+import {
+    ReducersMapObject,
+    ThunkDispatch,
+    UnknownAction,
+    configureStore,
+} from "@reduxjs/toolkit";
+import { ReduxStoreWithManager, StateSchema } from "./StateSchema";
 import { userReducer } from "entities/User";
-import { loginReducer } from "features/AuthByUsername";
+import { createReducerManager } from "./reducerManager";
 
-export function createReduxStore(initialState?: StateSchema) {
+export function createReduxStore(
+    initialState?: StateSchema,
+    asyncReducers?: ReducersMapObject<StateSchema>
+): ReduxStoreWithManager {
     const rootReducers: ReducersMapObject<StateSchema> = {
+        ...asyncReducers,
         user: userReducer,
-        loginForm: loginReducer,
     };
 
-    return configureStore<StateSchema>({
-        reducer: rootReducers,
+    const reducerManager = createReducerManager(rootReducers);
+
+    const store = configureStore({
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        //@ts-expect-error
+        reducer: reducerManager.reduce as ReducersMapObject<StateSchema>,
         devTools: __IS_DEV__,
         preloadedState: initialState,
     });
+
+    (store as ReduxStoreWithManager).reducerManager = reducerManager;
+
+    return store as ReduxStoreWithManager;
 }
 
-export type RootState = ReturnType<typeof createReduxStore>["getState"];
-export type AppDispatch = ReturnType<typeof createReduxStore>["dispatch"];
+export type AppStore = ReturnType<typeof createReduxStore>;
+export type RootState = ReturnType<AppStore["getState"]>;
+export type AppDispatch = ThunkDispatch<RootState, unknown, UnknownAction> &
+    AppStore["dispatch"];
