@@ -5,7 +5,7 @@ import { Button, ButtonTheme } from "shared/ui/Button/ui/Button";
 import { classNames } from "shared/lib/classNames/classNames";
 import { LoginModal } from "features/AuthByUsername";
 import { getUserAuthData, userActions } from "entities/User";
-import { useAppDispatch } from "app/providers/StoreProvider/config/hooks";
+import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import cls from "./Navbar.module.scss";
 
 interface NavbarProps {

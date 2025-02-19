@@ -34,6 +34,7 @@ const config: Config = {
 
     globals: {
         __IS_DEV__: true,
+        __API__: "",
     },
 
     testMatch: ["<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)"],

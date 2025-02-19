@@ -1,16 +1,24 @@
+import { NavigateOptions, To } from "react-router-dom";
 import {
+    Reducer,
     ReducersMapObject,
     ThunkDispatch,
     UnknownAction,
     configureStore,
 } from "@reduxjs/toolkit";
-import { ReduxStoreWithManager, StateSchema } from "./StateSchema";
+import {
+    ReduxStoreWithManager,
+    StateSchema,
+    ThunkExtraArg,
+} from "./StateSchema";
 import { userReducer } from "entities/User";
 import { createReducerManager } from "./reducerManager";
+import { $api } from "shared/api/api";
 
 export function createReduxStore(
     initialState?: StateSchema,
-    asyncReducers?: ReducersMapObject<StateSchema>
+    asyncReducers?: ReducersMapObject<StateSchema>,
+    navigate?: (to: To, options?: NavigateOptions) => void
 ): ReduxStoreWithManager {
     const rootReducers: ReducersMapObject<StateSchema> = {
         ...asyncReducers,
@@ -19,12 +27,21 @@ export function createReduxStore(
 
     const reducerManager = createReducerManager(rootReducers);
 
+    const extraArg: ThunkExtraArg = {
+        api: $api,
+        navigate,
+    };
+
     const store = configureStore({
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        //@ts-expect-error
-        reducer: reducerManager.reduce as ReducersMapObject<StateSchema>,
+        reducer: reducerManager.reduce as Reducer<StateSchema>,
         devTools: __IS_DEV__,
         preloadedState: initialState,
+        middleware: (getDefaultMiddlware) =>
+            getDefaultMiddlware({
+                thunk: {
+                    extraArgument: extraArg,
+                },
+            }),
     });
 
     (store as ReduxStoreWithManager).reducerManager = reducerManager;
@@ -32,7 +49,8 @@ export function createReduxStore(
     return store as ReduxStoreWithManager;
 }
 
-export type AppStore = ReturnType<typeof createReduxStore>;
-export type RootState = ReturnType<AppStore["getState"]>;
-export type AppDispatch = ThunkDispatch<RootState, unknown, UnknownAction> &
-    AppStore["dispatch"];
+export type AppDispatch = ThunkDispatch<
+    StateSchema,
+    ThunkExtraArg,
+    UnknownAction
+>;
