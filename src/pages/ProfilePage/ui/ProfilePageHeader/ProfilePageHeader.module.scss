@@ -1,0 +1,14 @@
+.ProfilePageHeader {
+    margin-bottom: 20px;
+    .cardHeader {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .editBtn {
+        margin-left: auto;
+    }
+    .cancelBtn {
+        margin-right: 15px;
+    }
+}

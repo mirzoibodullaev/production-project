@@ -2,6 +2,7 @@
     cursor: pointer;
     color: var(--inverted-primary-color);
     padding: 6px 15px;
+    background: none;
 }
 
 .clear {
@@ -14,7 +15,11 @@
 .outline {
     border: 1px solid var(--primary-color);
     color: var(--primary-color);
-    background: none;
+}
+
+.outline_red {
+    color: #ff0000;
+    border: 1px solid #ff0000;
 }
 
 .background {

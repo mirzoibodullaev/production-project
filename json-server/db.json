@@ -1,19 +1,19 @@
 {
-    "users": [
-        {
-            "id": "1",
-            "username": "admin",
-            "password": "123"
-        }
-    ],
-    "profile": {
-        "firstname": "Мирзо",
-        "lastname": "Ибодуллаев",
-        "age": 21,
-        "currency": "USD",
-        "country": "Uzbekistan",
-        "city": "Tashkent",
-        "username": "admin",
-        "avatar": "https://www.pngplay.com/wp-content/uploads/12/User-Avatar-Profile-Transparent-Clip-Art-Background.png"
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "123"
     }
+  ],
+  "profile": {
+    "firstname": "Mirzo",
+    "lastname": "Ibodullaev",
+    "age": 21,
+    "currency": "UZS",
+    "country": "Uzbekistan",
+    "city": "Tashkent",
+    "username": "admin",
+    "avatar": "https://www.pngplay.com/wp-content/uploads/12/User-Avatar-Profile-Transparent-Clip-Art-Background.png"
+  }
 }

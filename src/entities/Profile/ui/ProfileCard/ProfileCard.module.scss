@@ -3,18 +3,55 @@
     border: 2px solid var(--inverted-bg-color);
 }
 
-.cardHeader {
-    display: flex;
-}
-
-.editBtn {
-    margin-left: auto;
-}
-
 .data {
-    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.inputWrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.label {
+    min-width: 200px;
+    font-weight: 500;
 }
 
 .input {
-    margin-top: 10px;
+    flex: 1;
+}
+
+.avatarWrapper {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.loading,
+.error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+}
+
+.error {
+    text-align: center;
+}
+
+.errorTitle,
+.errorText {
+    color: #ff0000;
+}
+
+.errorTitle {
+    font-size: 26px;
+}
+
+.editing {
+    border-color: #ff0000;
 }
