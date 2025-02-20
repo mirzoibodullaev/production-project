@@ -1,7 +1,7 @@
-import { BrowserRouter } from "react-router-dom";
 import type { Meta, StoryObj } from "@storybook/react";
 import { Theme, ThemeProvider } from "app/providers/ThemeProvider";
 import { Navbar } from "./Navbar";
+import { StoreDecorator } from "shared/storybook/StoreDecorator/StoreDecorator";
 
 const meta: Meta<typeof Navbar> = {
     title: "widgets/Navbar",
@@ -12,6 +12,7 @@ const meta: Meta<typeof Navbar> = {
     tags: ["autodocs"],
     argTypes: {},
     args: {},
+    decorators: [StoreDecorator()],
 };
 
 export default meta;
@@ -21,13 +22,11 @@ export const Light: Story = {
     args: {},
     decorators: [
         (Story) => (
-            <BrowserRouter>
-                <ThemeProvider>
-                    <div className={`app ${Theme.LIGHT}`}>
-                        <Story />
-                    </div>
-                </ThemeProvider>
-            </BrowserRouter>
+            <ThemeProvider>
+                <div className={`app ${Theme.LIGHT}`}>
+                    <Story />
+                </div>
+            </ThemeProvider>
         ),
     ],
 };
@@ -36,13 +35,11 @@ export const Dark: Story = {
     args: {},
     decorators: [
         (Story) => (
-            <BrowserRouter>
-                <ThemeProvider>
-                    <div className={`app ${Theme.DARK}`}>
-                        <Story />
-                    </div>
-                </ThemeProvider>
-            </BrowserRouter>
+            <ThemeProvider>
+                <div className={`app ${Theme.DARK}`}>
+                    <Story />
+                </div>
+            </ThemeProvider>
         ),
     ],
 };
