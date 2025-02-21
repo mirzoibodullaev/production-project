@@ -23,6 +23,7 @@ import { Currency } from "entities/Currency";
 import { Country } from "entities/Country";
 import cls from "./ProfilePage.module.scss";
 import { useTranslation } from "react-i18next";
+import { getInitedUser, getUserAuthData } from "entities/User";
 
 const reducer: ReducerList = {
     profile: profileReducer,
@@ -40,6 +41,8 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     const error = useSelector(getProfileError);
     const readonly = useSelector(getProfileReadonly);
     const validateErrors = useSelector(getProfileValidateErrors);
+    const inited = useSelector(getInitedUser);
+    const authData = useSelector(getUserAuthData);
 
     const validateErrorsTranslation = {
         [ValidateProfileErrors.INCORRET_AGE]: t("Некорректный возраст"),
@@ -55,8 +58,10 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     };
 
     useEffect(() => {
-        dispatch(fetchProfileData());
-    }, [dispatch]);
+        if (inited && authData) {
+            dispatch(fetchProfileData());
+        }
+    }, [authData, dispatch, inited]);
 
     const onChangeFirstname = useCallback(
         (value?: string) => {
