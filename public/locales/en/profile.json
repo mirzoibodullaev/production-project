@@ -10,5 +10,11 @@
     "Аватар :": "Avatar :",
     "Ваш возраст :": "Age :",
     "Укажите валюту :": "Select currency :",
-    "Укажите страну :": "Select country :"
+    "Укажите страну :": "Select country :",
+    "Некорректный возраст": "Incorrect age",
+    "Некорректный город": "Incorrect city",
+    "Имя пользователя обязательно": "Username is required",
+    "Имя и фамилия обязательны": "Firstname and lastname are required",
+    "Данные не указаны": "No data provided",
+    "Ошибка сервера": "Server error"
 }
