@@ -1,19 +1,52 @@
 {
-  "users": [
-    {
-      "id": "1",
-      "username": "admin",
-      "password": "123"
-    }
-  ],
-  "profile": {
-    "firstname": "Mirzo",
-    "lastname": "Ibodullaev",
-    "age": 21,
-    "currency": "UZS",
-    "country": "Uzbekistan",
-    "city": "Tashkent",
-    "username": "admin",
-    "avatar": "https://www.pngplay.com/wp-content/uploads/12/User-Avatar-Profile-Transparent-Clip-Art-Background.png"
-  }
+    "users": [
+        {
+            "id": "1",
+            "username": "admin",
+            "password": "123"
+        }
+    ],
+    "profile": {
+        "firstname": "Mirzo",
+        "lastname": "Ibodullaev",
+        "age": 21,
+        "currency": "UZS",
+        "country": "Uzbekistan",
+        "city": "Tashkent",
+        "username": "admin",
+        "avatar": "https://www.pngplay.com/wp-content/uploads/12/User-Avatar-Profile-Transparent-Clip-Art-Background.png"
+    },
+    "articles": [
+        {
+            "id": "1",
+            "title": "Новости JavaScript",
+            "subtitle": "Что нового в JS за 2025 год?",
+            "img": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
+            "views": 1012,
+            "createdAt": "25.01.2025",
+            "type": ["IT"],
+            "blocks": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "Что такое Set в JavaScript",
+                    "paragraphs": [
+                        "Set — это встроенный объект в JavaScript, который представляет собой коллекцию уникальных значений. Он позволяет хранить любые типы данных, такие как примитивы или ссылки на объекты, при этом исключая дублирующиеся элементы.",
+                        "Основные возможности Set включают добавление, удаление и проверку наличия элементов, а также операции над множествами, такие как объединение, пересечение и разность. Set полезен при работе с данными, где важна уникальность значений и требуется эффективная обработка коллекций."
+                    ]
+                },
+                {
+                    "id": "2",
+                    "type": "CODE",
+                    "code": "const setA = new Set([1, 2, 3, 4]);\nconst setB = new Set([3, 4, 5, 6]);\n\nconst intersection = new Set([...setA].filter(value => setB.has(value)));\nconsole.log([...intersection]);\n\nconst difference = new Set([...setA].filter(value => !setB.has(value)));\nconsole.log([...difference]);\n\nconst union = new Set([...setA, ...setB]);\nconsole.log([...union]);"
+                },
+                {
+                    "id": "3",
+                    "type": "IMAGE",
+                    "src": "https://www.boardinfinity.com/blog/content/images/2022/11/1_4gbOh7p-CnOlEr4LK_YOiQ.png",
+                    "title": "Рисунок 1- скриншот"
+                }
+            ]
+        }
+    ]
 }

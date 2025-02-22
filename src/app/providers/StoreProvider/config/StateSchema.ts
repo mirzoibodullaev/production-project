@@ -10,11 +10,13 @@ import { ProfileSchema } from "entities/Profile";
 import { UserSchema } from "entities/User";
 import { LoginSchema } from "features/AuthByUsername";
 import { AppDispatch } from "./store";
+import { ArticleDetailsSchema } from "entities/Article";
 
 export interface StateSchema {
     user: UserSchema;
     loginForm?: LoginSchema;
     profile?: ProfileSchema;
+    articles?: ArticleDetailsSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;
