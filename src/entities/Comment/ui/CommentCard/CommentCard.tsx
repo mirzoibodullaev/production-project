@@ -19,7 +19,7 @@ export const CommentCard = ({
 }: CommentCardProps) => {
     if (isLoading) {
         return (
-            <div className={classNames(cls.CommentCard, {}, [className])}>
+            <div className={classNames(cls.CommentCard, {}, [className, cls.loading])}>
                 <div className={cls.header}>
                     <Skeleton width={30} height={30} border="50%" />
                     <Skeleton
