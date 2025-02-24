@@ -14,5 +14,7 @@
     "Введите пароль": "Enter password",
     "Профиль": "Profile",
     "Статьи": "Articles",
-    "Комментарии отстутсвуют": "No comments available"
+    "Комментарии отстутсвуют": "No comments available",
+    "Отправить": "Send",
+    "Введите текст комментария": "Enter the comment text"
 }

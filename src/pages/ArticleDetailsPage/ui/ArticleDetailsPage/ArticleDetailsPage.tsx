@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
@@ -16,6 +16,8 @@ import {
 import { getArticleCommentsIsLoading } from "../../model/selectors/commentsSelectors";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { fetchCommentsByArticleId } from "../../model/services/fetchArticle/fetchCommentsByArticleId";
+import { AddCommentForm } from "features/AddCommentForm";
+import { addCommentForArticle } from "pages/ArticleDetailsPage/model/services/addCommentForArticle/addCommentForArticle";
 import cls from "./ArticleDetailsPage.module.scss";
 
 interface ArticleDetailsPageProps {
@@ -32,6 +34,13 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     const comments = useSelector(getArticleComments.selectAll);
     const isLoading = useSelector(getArticleCommentsIsLoading);
     const dispatch = useAppDispatch();
+
+    const onSendComment = useCallback(
+        (text: string) => {
+            dispatch(addCommentForArticle(text));
+        },
+        [dispatch]
+    );
 
     useEffect(() => {
         dispatch(fetchCommentsByArticleId(id));
@@ -53,8 +62,8 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
                 className={classNames(cls.ArticleDetailsPage, {}, [className])}
             >
                 <ArticleDetails id={id} />
-
                 <h2 className={cls.commentTitle}>{t("Комментарии")}</h2>
+                <AddCommentForm onSendComment={onSendComment} />
                 <CommentList comments={comments} isLoading={isLoading} />
             </div>
         </DynamicModuleLoader>

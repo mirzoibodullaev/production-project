@@ -21,9 +21,9 @@ import { useSelector } from "react-redux";
 import { ProfilePageHeader } from "./ProfilePageHeader/ProfilePageHeader";
 import { Currency } from "entities/Currency";
 import { Country } from "entities/Country";
-import cls from "./ProfilePage.module.scss";
 import { useTranslation } from "react-i18next";
-import { getInitedUser, getUserAuthData } from "entities/User";
+import { useParams } from "react-router-dom";
+import cls from "./ProfilePage.module.scss";
 
 const reducer: ReducerList = {
     profile: profileReducer,
@@ -35,14 +35,13 @@ interface ProfilePageProps {
 
 const ProfilePage = ({ className }: ProfilePageProps) => {
     const { t } = useTranslation("profile");
+    const { id } = useParams<{ id: string }>();
     const dispatch = useAppDispatch();
     const formData = useSelector(getProfileForm);
     const isLoading = useSelector(getProfileIsLoading);
     const error = useSelector(getProfileError);
     const readonly = useSelector(getProfileReadonly);
     const validateErrors = useSelector(getProfileValidateErrors);
-    const inited = useSelector(getInitedUser);
-    const authData = useSelector(getUserAuthData);
 
     const validateErrorsTranslation = {
         [ValidateProfileErrors.INCORRET_AGE]: t("Некорректный возраст"),
@@ -58,10 +57,10 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     };
 
     useEffect(() => {
-        if (inited && authData) {
-            dispatch(fetchProfileData());
+        if (id) {
+            dispatch(fetchProfileData(id));
         }
-    }, [authData, dispatch, inited]);
+    }, [dispatch, id]);
 
     const onChangeFirstname = useCallback(
         (value?: string) => {

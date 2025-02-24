@@ -1,0 +1,22 @@
+.AddCommentForm {
+    // padding: 40px 20px 40px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input {
+    max-width: 80%;
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.sendBtn {
+    border-radius: 4px;
+    padding: 20px;
+    transition: background-color 0.3s;
+
+    &:hover {
+        background-color: var(--inverted-primary-color);
+    }
+}
