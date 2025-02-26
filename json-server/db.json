@@ -1,127 +1,126 @@
 {
-  "users": [
-    {
-      "id": "1",
-      "username": "admin",
-      "password": "123",
-      "role": "ADMIN",
-      "avatar": "https://img.freepik.com/premium-vector/professional-male-avatar-profile-picture-employee-work_1322206-66590.jpg"
-    },
-    {
-      "id": "2",
-      "username": "user",
-      "password": "123",
-      "role": "USER",
-      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsEJHmI0MlIGvH9CYkbsLEWQ5_ee8Qtl5V-Q&s"
-    }
-  ],
-  "comments": [
-    {
-      "id": "1",
-      "text": "some comment",
-      "articleId": "1",
-      "userId": "1"
-    },
-    {
-      "id": "2",
-      "text": "some comment",
-      "articleId": "1",
-      "userId": "2"
-    },
-    {
-      "articleId": "1",
-      "userId": "1",
-      "text": "12331",
-      "id": "I_RstxQ"
-    },
-    {
-      "articleId": "1",
-      "userId": "1",
-      "text": "aa",
-      "id": "JJ-T8ud"
-    },
-    {
-      "articleId": "1",
-      "userId": "1",
-      "text": "ww",
-      "id": "PyG2QjF"
-    },
-    {
-      "articleId": "1",
-      "userId": "1",
-      "text": "222",
-      "id": "a2NqLjp"
-    }
-  ],
-  "profile": [
-    {
-      "id": "1",
-      "firstname": "Mirzo",
-      "lastname": "Ibodullaev",
-      "age": 21,
-      "currency": "UZS",
-      "country": "Uzbekistan",
-      "city": "Tashkent",
-      "username": "admin",
-      "avatar": "https://www.pngplay.com/wp-content/uploads/12/User-Avatar-Profile-Transparent-Clip-Art-Background.png"
-    },
-    {
-      "id": "2",
-      "firstname": "John",
-      "lastname": "Doe",
-      "age": 33,
-      "currency": "USD",
-      "country": "America",
-      "city": "Los Angeles",
-      "username": "user",
-      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsEJHmI0MlIGvH9CYkbsLEWQ5_ee8Qtl5V-Q&s"
-    }
-  ],
-  "articles": [
-    {
-      "id": "1",
-      "title": "Новости JavaScript",
-      "subtitle": "Что нового в JS за 2025 год?",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
-      "views": 1012,
-      "createdAt": "25.01.2025",
-      "type": [
-        "IT"
-      ],
-      "blocks": [
+    "users": [
         {
-          "id": "1",
-          "type": "TEXT",
-          "title": "Что такое Set в JavaScript",
-          "paragraphs": [
-            "Set — это встроенный объект в JavaScript, который представляет собой коллекцию уникальных значений. Он позволяет хранить любые типы данных, такие как примитивы или ссылки на объекты, при этом исключая дублирующиеся элементы.",
-            "Основные возможности Set включают добавление, удаление и проверку наличия элементов, а также операции над множествами, такие как объединение, пересечение и разность. Set полезен при работе с данными, где важна уникальность значений и требуется эффективная обработка коллекций."
-          ]
+            "id": "1",
+            "username": "admin",
+            "password": "123",
+            "role": "ADMIN",
+            "avatar": "https://img.freepik.com/premium-vector/professional-male-avatar-profile-picture-employee-work_1322206-66590.jpg"
         },
         {
-          "id": "2",
-          "type": "CODE",
-          "code": "const setA = new Set([1, 2, 3, 4]);\nconst setB = new Set([3, 4, 5, 6]);\n\nconst intersection = new Set([...setA].filter(value => setB.has(value)));\nconsole.log([...intersection]);\n\nconst difference = new Set([...setA].filter(value => !setB.has(value)));\nconsole.log([...difference]);\n\nconst union = new Set([...setA, ...setB]);\nconsole.log([...union]);"
-        },
-        {
-          "id": "3",
-          "type": "TEXT",
-          "paragraphs": [
-            "В этом коде демонстрируются три основные операции над множествами в JavaScript: пересечение, разность и объединение. Множества (Set) позволяют хранить уникальные значения без дублирующихся элементов.",
-            "Сначала создаются два множества: setA со значениями {1, 2, 3, 4} и setB со значениями {3, 4, 5, 6}.",
-            "Пересечение (intersection) определяется путем фильтрации элементов setA, которые также содержатся в setB. Результатом будет множество {3, 4}, так как это общие элементы двух множеств.",
-            "Разность (difference) вычисляется путем выбора элементов из setA, которых нет в setB. В данном случае результатом является множество {1, 2}.",
-            "Объединение (union) создается путем объединения всех элементов из setA и setB с помощью оператора расширения (...) и удаления дублирующихся значений с помощью Set. Результат: {1, 2, 3, 4, 5, 6}.",
-            "Таким образом, код демонстрирует, как легко можно работать с множествами в JavaScript для выполнения стандартных операций над коллекциями данных."
-          ]
-        },
-        {
-          "id": "4",
-          "type": "IMAGE",
-          "src": "https://www.boardinfinity.com/blog/content/images/2022/11/1_4gbOh7p-CnOlEr4LK_YOiQ.png",
-          "title": "Рисунок 1- скриншот"
+            "id": "2",
+            "username": "user",
+            "password": "123",
+            "role": "USER",
+            "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsEJHmI0MlIGvH9CYkbsLEWQ5_ee8Qtl5V-Q&s"
         }
-      ]
-    }
-  ]
+    ],
+    "comments": [
+        {
+            "id": "1",
+            "text": "some comment",
+            "articleId": "1",
+            "userId": "1"
+        },
+        {
+            "id": "2",
+            "text": "some comment",
+            "articleId": "1",
+            "userId": "2"
+        },
+        {
+            "articleId": "1",
+            "userId": "1",
+            "text": "12331",
+            "id": "I_RstxQ"
+        },
+        {
+            "articleId": "1",
+            "userId": "1",
+            "text": "aa",
+            "id": "JJ-T8ud"
+        },
+        {
+            "articleId": "1",
+            "userId": "1",
+            "text": "ww",
+            "id": "PyG2QjF"
+        },
+        {
+            "articleId": "1",
+            "userId": "1",
+            "text": "222",
+            "id": "a2NqLjp"
+        }
+    ],
+    "profile": [
+        {
+            "id": "1",
+            "firstname": "Mirzo",
+            "lastname": "Ibodullaev",
+            "age": 21,
+            "currency": "UZS",
+            "country": "Uzbekistan",
+            "city": "Tashkent",
+            "username": "admin",
+            "avatar": "https://www.pngplay.com/wp-content/uploads/12/User-Avatar-Profile-Transparent-Clip-Art-Background.png"
+        },
+        {
+            "id": "2",
+            "firstname": "John",
+            "lastname": "Doe",
+            "age": 33,
+            "currency": "USD",
+            "country": "America",
+            "city": "Los Angeles",
+            "username": "user",
+            "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsEJHmI0MlIGvH9CYkbsLEWQ5_ee8Qtl5V-Q&s"
+        }
+    ],
+    "articles": [
+        {
+            "id": "1",
+            "userId": "1",
+            "title": "Новости JavaScript",
+            "subtitle": "Что нового в JS за 2025 год?",
+            "img": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
+            "views": 1012,
+            "createdAt": "25.01.2025",
+            "type": ["IT"],
+            "blocks": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "Что такое Set в JavaScript",
+                    "paragraphs": [
+                        "Set — это встроенный объект в JavaScript, который представляет собой коллекцию уникальных значений. Он позволяет хранить любые типы данных, такие как примитивы или ссылки на объекты, при этом исключая дублирующиеся элементы.",
+                        "Основные возможности Set включают добавление, удаление и проверку наличия элементов, а также операции над множествами, такие как объединение, пересечение и разность. Set полезен при работе с данными, где важна уникальность значений и требуется эффективная обработка коллекций."
+                    ]
+                },
+                {
+                    "id": "2",
+                    "type": "CODE",
+                    "code": "const setA = new Set([1, 2, 3, 4]);\nconst setB = new Set([3, 4, 5, 6]);\n\nconst intersection = new Set([...setA].filter(value => setB.has(value)));\nconsole.log([...intersection]);\n\nconst difference = new Set([...setA].filter(value => !setB.has(value)));\nconsole.log([...difference]);\n\nconst union = new Set([...setA, ...setB]);\nconsole.log([...union]);"
+                },
+                {
+                    "id": "3",
+                    "type": "TEXT",
+                    "paragraphs": [
+                        "В этом коде демонстрируются три основные операции над множествами в JavaScript: пересечение, разность и объединение. Множества (Set) позволяют хранить уникальные значения без дублирующихся элементов.",
+                        "Сначала создаются два множества: setA со значениями {1, 2, 3, 4} и setB со значениями {3, 4, 5, 6}.",
+                        "Пересечение (intersection) определяется путем фильтрации элементов setA, которые также содержатся в setB. Результатом будет множество {3, 4}, так как это общие элементы двух множеств.",
+                        "Разность (difference) вычисляется путем выбора элементов из setA, которых нет в setB. В данном случае результатом является множество {1, 2}.",
+                        "Объединение (union) создается путем объединения всех элементов из setA и setB с помощью оператора расширения (...) и удаления дублирующихся значений с помощью Set. Результат: {1, 2, 3, 4, 5, 6}.",
+                        "Таким образом, код демонстрирует, как легко можно работать с множествами в JavaScript для выполнения стандартных операций над коллекциями данных."
+                    ]
+                },
+                {
+                    "id": "4",
+                    "type": "IMAGE",
+                    "src": "https://www.boardinfinity.com/blog/content/images/2022/11/1_4gbOh7p-CnOlEr4LK_YOiQ.png",
+                    "title": "Рисунок 1- скриншот"
+                }
+            ]
+        }
+    ]
 }

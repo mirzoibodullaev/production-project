@@ -21,7 +21,7 @@ export default [
         rules: {
             ...pluginReact.configs.flat.recommended.rules,
             "react/react-in-jsx-scope": "off",
-            "@typescript-eslint/no-unused-vars": "warn",
+            "@typescript-eslint/no-unused-vars": "off",
             "react-hooks/rules-of-hooks": "error",
             "react-hooks/exhaustive-deps": "error",
             "react/display-name": "off",
