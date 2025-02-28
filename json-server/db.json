@@ -1,126 +1,871 @@
 {
-    "users": [
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "123",
+      "role": "ADMIN",
+      "avatar": "https://img.freepik.com/premium-vector/professional-male-avatar-profile-picture-employee-work_1322206-66590.jpg"
+    },
+    {
+      "id": "2",
+      "username": "user",
+      "password": "123",
+      "role": "USER",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsEJHmI0MlIGvH9CYkbsLEWQ5_ee8Qtl5V-Q&s"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "some comment",
+      "articleId": "1",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "text": "some comment",
+      "articleId": "1",
+      "userId": "2"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "12331",
+      "id": "I_RstxQ"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "aa",
+      "id": "JJ-T8ud"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "ww",
+      "id": "PyG2QjF"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "222",
+      "id": "a2NqLjp"
+    },
+    {
+      "articleId": "3",
+      "userId": "2",
+      "text": "ффф",
+      "id": "fZlL8UO"
+    }
+  ],
+  "profile": [
+    {
+      "id": "1",
+      "firstname": "Mirzo",
+      "lastname": "Ibodullaev",
+      "age": 21,
+      "currency": "UZS",
+      "country": "Uzbekistan",
+      "city": "Tashkent",
+      "username": "admin",
+      "avatar": "https://www.pngplay.com/wp-content/uploads/12/User-Avatar-Profile-Transparent-Clip-Art-Background.png"
+    },
+    {
+      "id": "2",
+      "firstname": "John",
+      "lastname": "Doe",
+      "age": 33,
+      "currency": "USD",
+      "country": "America",
+      "city": "Los Angeles",
+      "username": "user",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsEJHmI0MlIGvH9CYkbsLEWQ5_ee8Qtl5V-Q&s"
+    }
+  ],
+  "articles": [
+    {
+      "id": "1",
+      "userId": "1",
+      "title": "Новости JavaScript",
+      "subtitle": "Что нового в JS за 2025 год?",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
+      "views": 1012,
+      "createdAt": "25.01.2025",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
         {
-            "id": "1",
-            "username": "admin",
-            "password": "123",
-            "role": "ADMIN",
-            "avatar": "https://img.freepik.com/premium-vector/professional-male-avatar-profile-picture-employee-work_1322206-66590.jpg"
+          "id": "1",
+          "type": "TEXT",
+          "title": "Что такое Set в JavaScript",
+          "paragraphs": [
+            "Set — это встроенный объект в JavaScript, который представляет собой коллекцию уникальных значений. Он позволяет хранить любые типы данных, такие как примитивы или ссылки на объекты, при этом исключая дублирующиеся элементы.",
+            "Основные возможности Set включают добавление, удаление и проверку наличия элементов, а также операции над множествами, такие как объединение, пересечение и разность. Set полезен при работе с данными, где важна уникальность значений и требуется эффективная обработка коллекций."
+          ]
         },
         {
-            "id": "2",
-            "username": "user",
-            "password": "123",
-            "role": "USER",
-            "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsEJHmI0MlIGvH9CYkbsLEWQ5_ee8Qtl5V-Q&s"
+          "id": "2",
+          "type": "CODE",
+          "code": "const setA = new Set([1, 2, 3, 4]);\nconst setB = new Set([3, 4, 5, 6]);\n\nconst intersection = new Set([...setA].filter(value => setB.has(value)));\nconsole.log([...intersection]);\n\nconst difference = new Set([...setA].filter(value => !setB.has(value)));\nconsole.log([...difference]);\n\nconst union = new Set([...setA, ...setB]);\nconsole.log([...union]);"
+        },
+        {
+          "id": "3",
+          "type": "TEXT",
+          "paragraphs": [
+            "В этом коде демонстрируются три основные операции над множествами в JavaScript: пересечение, разность и объединение. Множества (Set) позволяют хранить уникальные значения без дублирующихся элементов.",
+            "Сначала создаются два множества: setA со значениями {1, 2, 3, 4} и setB со значениями {3, 4, 5, 6}.",
+            "Пересечение (intersection) определяется путем фильтрации элементов setA, которые также содержатся в setB. Результатом будет множество {3, 4}, так как это общие элементы двух множеств.",
+            "Разность (difference) вычисляется путем выбора элементов из setA, которых нет в setB. В данном случае результатом является множество {1, 2}.",
+            "Объединение (union) создается путем объединения всех элементов из setA и setB с помощью оператора расширения (...) и удаления дублирующихся значений с помощью Set. Результат: {1, 2, 3, 4, 5, 6}.",
+            "Таким образом, код демонстрирует, как легко можно работать с множествами в JavaScript для выполнения стандартных операций над коллекциями данных."
+          ]
+        },
+        {
+          "id": "4",
+          "type": "IMAGE",
+          "src": "https://www.boardinfinity.com/blog/content/images/2022/11/1_4gbOh7p-CnOlEr4LK_YOiQ.png",
+          "title": "Рисунок 1- скриншот"
         }
-    ],
-    "comments": [
+      ]
+    },
+    {
+      "id": "2",
+      "userId": "2",
+      "title": "React 19: Новые возможности",
+      "subtitle": "Что изменилось в React 19?",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
+      "views": 1578,
+      "createdAt": "10.02.2025",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
         {
-            "id": "1",
-            "text": "some comment",
-            "articleId": "1",
-            "userId": "1"
+          "id": "1",
+          "type": "TEXT",
+          "title": "Использование useOptimistic в React 19",
+          "paragraphs": [
+            "React 19 представил новый хук useOptimistic, который помогает управлять оптимистичными обновлениями состояния. Это полезно для UI-обновлений перед подтверждением изменений сервером.",
+            "Этот хук снижает задержки при взаимодействии с пользователем, создавая плавные анимации и мгновенную обратную связь."
+          ]
         },
         {
-            "id": "2",
-            "text": "some comment",
-            "articleId": "1",
-            "userId": "2"
+          "id": "2",
+          "type": "CODE",
+          "code": "const [optimisticValue, setOptimisticValue] = useOptimistic(value);\n\nconst handleClick = () => {\n  setOptimisticValue(prev => prev + 1);\n  updateServerValue();\n};"
         },
         {
-            "articleId": "1",
-            "userId": "1",
-            "text": "12331",
-            "id": "I_RstxQ"
-        },
-        {
-            "articleId": "1",
-            "userId": "1",
-            "text": "aa",
-            "id": "JJ-T8ud"
-        },
-        {
-            "articleId": "1",
-            "userId": "1",
-            "text": "ww",
-            "id": "PyG2QjF"
-        },
-        {
-            "articleId": "1",
-            "userId": "1",
-            "text": "222",
-            "id": "a2NqLjp"
+          "id": "3",
+          "type": "TEXT",
+          "paragraphs": [
+            "Этот код демонстрирует, как React 19 позволяет предварительно обновлять интерфейс без ожидания ответа от сервера, улучшая пользовательский опыт."
+          ]
         }
-    ],
-    "profile": [
+      ]
+    },
+    {
+      "id": "3",
+      "userId": "2",
+      "title": "Обновления в TypeScript 5.5",
+      "subtitle": "Новые фичи в последней версии TS",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg",
+      "views": 2043,
+      "createdAt": "15.02.2025",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
         {
-            "id": "1",
-            "firstname": "Mirzo",
-            "lastname": "Ibodullaev",
-            "age": 21,
-            "currency": "UZS",
-            "country": "Uzbekistan",
-            "city": "Tashkent",
-            "username": "admin",
-            "avatar": "https://www.pngplay.com/wp-content/uploads/12/User-Avatar-Profile-Transparent-Clip-Art-Background.png"
+          "id": "1",
+          "type": "TEXT",
+          "title": "Улучшенная типизация в TS 5.5",
+          "paragraphs": [
+            "TypeScript 5.5 добавляет улучшенную поддержку параметров с дефолтными значениями и улучшенную типизацию для асинхронных функций.",
+            "Эти изменения делают код более предсказуемым и удобным для написания."
+          ]
         },
         {
-            "id": "2",
-            "firstname": "John",
-            "lastname": "Doe",
-            "age": 33,
-            "currency": "USD",
-            "country": "America",
-            "city": "Los Angeles",
-            "username": "user",
-            "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsEJHmI0MlIGvH9CYkbsLEWQ5_ee8Qtl5V-Q&s"
-        }
-    ],
-    "articles": [
+          "id": "2",
+          "type": "CODE",
+          "code": "function greet(name: string = 'Гость') {\n  console.log(`Привет, ${name}!`);\n}\ngreet();"
+        },
         {
-            "id": "1",
-            "userId": "1",
-            "title": "Новости JavaScript",
-            "subtitle": "Что нового в JS за 2025 год?",
-            "img": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
-            "views": 1012,
-            "createdAt": "25.01.2025",
-            "type": ["IT"],
-            "blocks": [
-                {
-                    "id": "1",
-                    "type": "TEXT",
-                    "title": "Что такое Set в JavaScript",
-                    "paragraphs": [
-                        "Set — это встроенный объект в JavaScript, который представляет собой коллекцию уникальных значений. Он позволяет хранить любые типы данных, такие как примитивы или ссылки на объекты, при этом исключая дублирующиеся элементы.",
-                        "Основные возможности Set включают добавление, удаление и проверку наличия элементов, а также операции над множествами, такие как объединение, пересечение и разность. Set полезен при работе с данными, где важна уникальность значений и требуется эффективная обработка коллекций."
-                    ]
-                },
-                {
-                    "id": "2",
-                    "type": "CODE",
-                    "code": "const setA = new Set([1, 2, 3, 4]);\nconst setB = new Set([3, 4, 5, 6]);\n\nconst intersection = new Set([...setA].filter(value => setB.has(value)));\nconsole.log([...intersection]);\n\nconst difference = new Set([...setA].filter(value => !setB.has(value)));\nconsole.log([...difference]);\n\nconst union = new Set([...setA, ...setB]);\nconsole.log([...union]);"
-                },
-                {
-                    "id": "3",
-                    "type": "TEXT",
-                    "paragraphs": [
-                        "В этом коде демонстрируются три основные операции над множествами в JavaScript: пересечение, разность и объединение. Множества (Set) позволяют хранить уникальные значения без дублирующихся элементов.",
-                        "Сначала создаются два множества: setA со значениями {1, 2, 3, 4} и setB со значениями {3, 4, 5, 6}.",
-                        "Пересечение (intersection) определяется путем фильтрации элементов setA, которые также содержатся в setB. Результатом будет множество {3, 4}, так как это общие элементы двух множеств.",
-                        "Разность (difference) вычисляется путем выбора элементов из setA, которых нет в setB. В данном случае результатом является множество {1, 2}.",
-                        "Объединение (union) создается путем объединения всех элементов из setA и setB с помощью оператора расширения (...) и удаления дублирующихся значений с помощью Set. Результат: {1, 2, 3, 4, 5, 6}.",
-                        "Таким образом, код демонстрирует, как легко можно работать с множествами в JavaScript для выполнения стандартных операций над коллекциями данных."
-                    ]
-                },
-                {
-                    "id": "4",
-                    "type": "IMAGE",
-                    "src": "https://www.boardinfinity.com/blog/content/images/2022/11/1_4gbOh7p-CnOlEr4LK_YOiQ.png",
-                    "title": "Рисунок 1- скриншот"
-                }
-            ]
+          "id": "3",
+          "type": "TEXT",
+          "paragraphs": [
+            "Теперь можно передавать параметры с дефолтными значениями без необходимости явного указания типа в момент вызова."
+          ]
         }
-    ]
+      ]
+    },
+    {
+      "id": "4",
+      "userId": "2",
+      "title": "Vue 4: Основные изменения",
+      "subtitle": "Что нового в Vue 4?",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg",
+      "views": 1325,
+      "createdAt": "20.02.2025",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Composition API в Vue 4",
+          "paragraphs": [
+            "Vue 4 продолжает развивать Composition API, делая работу с состоянием компонентов более удобной и структурированной.",
+            "Теперь можно использовать новые хуки, такие как useLifecycle и useReactive, для более удобного управления состоянием."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "import { ref, watch } from 'vue';\n\nconst count = ref(0);\nwatch(count, (newValue) => {\n  console.log(`Новое значение: ${newValue}`);\n});"
+        },
+        {
+          "id": "3",
+          "type": "TEXT",
+          "paragraphs": [
+            "В этом примере мы используем Composition API для работы с реактивными переменными и наблюдением за изменениями."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "userId": "1",
+      "title": "Node.js 20: Новые возможности",
+      "subtitle": "Что изменилось в Node.js 20?",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg",
+      "views": 1876,
+      "createdAt": "22.02.2025",
+      "type": [
+        "Backend"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Поддержка ES-модулей",
+          "paragraphs": [
+            "Node.js 20 улучшает поддержку ES-модулей, делая их использование более простым и удобным.",
+            "Теперь можно импортировать модули без использования .mjs-файлов, а также использовать top-level await без ограничений."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "import fs from 'fs/promises';\n\nconst data = await fs.readFile('./file.txt', 'utf-8');\nconsole.log(data);"
+        },
+        {
+          "id": "3",
+          "type": "TEXT",
+          "paragraphs": [
+            "В этом примере используется top-level await для асинхронного чтения файла без необходимости создания отдельной async-функции."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "userId": "1",
+      "title": "CSS 2025: Новые тренды",
+      "subtitle": "Какие новые фишки появились в CSS?",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg",
+      "views": 1453,
+      "createdAt": "23.02.2025",
+      "type": [
+        "Frontend"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Container Queries в CSS",
+          "paragraphs": [
+            "Одна из самых ожидаемых возможностей CSS — это Container Queries, позволяющие адаптировать стили в зависимости от размеров контейнера, а не только окна браузера.",
+            "Теперь разработчики могут создавать более гибкие и адаптивные компоненты без сложных медиа-запросов."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "@container (min-width: 500px) {\n  .card {\n    background-color: lightblue;\n  }\n}"
+        },
+        {
+          "id": "3",
+          "type": "TEXT",
+          "paragraphs": [
+            "В этом примере фоновый цвет .card изменится, если ширина контейнера будет больше 500px."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "userId": "2",
+      "title": "React 19: Чего ожидать?",
+      "subtitle": "Обновления в React 19 и новые возможности",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
+      "views": 2056,
+      "createdAt": "24.02.2025",
+      "type": [
+        "Frontend"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Автоматическое кэширование в React 19",
+          "paragraphs": [
+            "React 19 приносит новую систему кэширования, которая автоматически кеширует результаты рендеринга и предотвращает ненужные повторные вычисления.",
+            "Это означает более плавную работу компонентов и снижение нагрузки на браузер при обновлении состояния."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "import { useMemo } from 'react';\n\nconst computedValue = useMemo(() => expensiveCalculation(), []);"
+        },
+        {
+          "id": "3",
+          "type": "TEXT",
+          "paragraphs": [
+            "В этом примере используется useMemo для кэширования результата функции expensiveCalculation(), что улучшает производительность."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "userId": "2",
+      "title": "Python 3.12: Что нового?",
+      "subtitle": "Новые функции в последней версии Python",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
+      "views": 1783,
+      "createdAt": "26.02.2025",
+      "type": [
+        "Backend"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Оптимизированные структуры данных",
+          "paragraphs": [
+            "В Python 3.12 была улучшена работа со структурами данных, включая более эффективные списки и множества.",
+            "Теперь операции со словарями и списками выполняются быстрее благодаря новым алгоритмам обработки."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "my_dict = {key: value for key, value in my_list if condition}"
+        },
+        {
+          "id": "3",
+          "type": "TEXT",
+          "paragraphs": [
+            "В этом примере используется list comprehension для создания словаря с фильтрацией по условию."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "userId": "2",
+      "title": "Rust 2025: Будущее разработки",
+      "subtitle": "Почему Rust становится все популярнее?",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Rust_programming_language_black_logo.svg",
+      "views": 1562,
+      "createdAt": "27.02.2025",
+      "type": [
+        "Backend",
+        "System"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Безопасность памяти в Rust",
+          "paragraphs": [
+            "Одной из главных особенностей Rust является безопасность работы с памятью без использования сборщика мусора.",
+            "Это делает Rust идеальным выбором для разработки системного ПО, веб-приложений и блокчейн-технологий."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "fn main() {\n    let x = String::from(\"Привет, Rust!\");\n    println!(\"{}\", x);\n}"
+        },
+        {
+          "id": "3",
+          "type": "TEXT",
+          "paragraphs": [
+            "Этот код демонстрирует создание строки в Rust с автоматическим управлением памятью."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "userId": "1",
+      "title": "TypeScript 5.5: Новые возможности",
+      "subtitle": "Что нового в последнем обновлении TypeScript?",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg",
+      "views": 1893,
+      "createdAt": "28.02.2025",
+      "type": [
+        "Frontend"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Автоматическое выведение типов",
+          "paragraphs": [
+            "TypeScript 5.5 улучшает механизм автоматического выведения типов, снижая необходимость в явном указании типов переменных и возвращаемых значений функций.",
+            "Это делает код более чистым и поддерживаемым, уменьшая вероятность ошибок."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "function add(a: number, b: number) {\n    return a + b; // TypeScript сам выведет тип возвращаемого значения\n}"
+        },
+        {
+          "id": "3",
+          "type": "TEXT",
+          "paragraphs": [
+            "Теперь TypeScript может автоматически определять тип возвращаемого значения, что сокращает необходимость лишних аннотаций типов."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "userId": "2",
+      "title": "Vue 4: Перспективы развития",
+      "subtitle": "Какие новшества появятся в Vue 4?",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg",
+      "views": 1724,
+      "createdAt": "01.03.2025",
+      "type": [
+        "Frontend"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Компонентная архитектура Vue 4",
+          "paragraphs": [
+            "Vue 4 продолжает развивать компонентный подход, упрощая работу с реактивностью и состоянием приложения.",
+            "Новые хуки жизненного цикла и улучшенная интеграция с TypeScript делают Vue 4 удобнее для разработки сложных UI-приложений."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "import { ref } from 'vue';\n\nconst count = ref(0);\nconst increment = () => count.value++;\n\nconsole.log(count.value); // 0"
+        },
+        {
+          "id": "3",
+          "type": "TEXT",
+          "paragraphs": [
+            "Этот код демонстрирует использование `ref` для создания реактивной переменной `count` в Vue 4."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "userId": "2",
+      "title": "Node.js 22: Производительность и безопасность",
+      "subtitle": "Как изменился Node.js в последней версии?",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg",
+      "views": 1984,
+      "createdAt": "03.03.2025",
+      "type": [
+        "Backend"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Улучшенная многопоточность в Node.js 22",
+          "paragraphs": [
+            "Node.js 22 значительно улучшает работу с многопоточностью, обеспечивая более эффективное выполнение асинхронных задач.",
+            "Теперь Worker Threads работают быстрее и стабильнее, что особенно полезно для высоконагруженных серверных приложений."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "const { Worker } = require('worker_threads');\nconst worker = new Worker('./worker.js');\nworker.on('message', message => console.log(message));"
+        },
+        {
+          "id": "3",
+          "type": "TEXT",
+          "paragraphs": [
+            "Этот код создает новый поток с использованием `Worker Threads`, что позволяет выполнять задачи параллельно."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "userId": "2",
+      "title": "React 19: Новые возможности и улучшения",
+      "subtitle": "Какие новшества появятся в React 19?",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
+      "views": 2456,
+      "createdAt": "05.03.2025",
+      "type": [
+        "Frontend"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "React Compiler — революция в оптимизации",
+          "paragraphs": [
+            "В новой версии React 19 представили React Compiler, который автоматически оптимизирует ререндеринг компонентов.",
+            "Теперь разработчикам не нужно вручную использовать `useMemo` и `useCallback` в большинстве случаев."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "function MyComponent({ value }) {\n    return <p>{value}</p>;\n}\n// React сам оптимизирует ререндеринг"
+        },
+        {
+          "id": "3",
+          "type": "TEXT",
+          "paragraphs": [
+            "React Compiler анализирует зависимости компонентов и предотвращает ненужные ререндеры автоматически."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "14",
+      "userId": "2",
+      "title": "Python 3.12: Улучшения производительности",
+      "subtitle": "Что нового в последней версии Python?",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
+      "views": 3210,
+      "createdAt": "07.03.2025",
+      "type": [
+        "Backend"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Оптимизация интерпретатора Python",
+          "paragraphs": [
+            "Python 3.12 получил значительные улучшения в производительности, благодаря новому механизму компиляции байт-кода.",
+            "Теперь выполнение кода стало быстрее на 15-20% в сравнении с предыдущей версией."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "def fib(n):\n    if n <= 1:\n        return n\n    return fib(n-1) + fib(n-2)\n\nprint(fib(10))"
+        },
+        {
+          "id": "3",
+          "type": "TEXT",
+          "paragraphs": [
+            "Алгоритм вычисления чисел Фибоначчи теперь работает быстрее благодаря оптимизированному интерпретатору Python."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "15",
+      "userId": "1",
+      "title": "Rust 1.80: Нововведения в языке",
+      "subtitle": "Что нового в последней версии Rust?",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Rust_programming_language_black_logo.svg",
+      "views": 2780,
+      "createdAt": "10.03.2025",
+      "type": [
+        "Backend",
+        "System"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Новые возможности в системе владения",
+          "paragraphs": [
+            "Rust 1.80 улучшает систему владения памятью, добавляя новые удобные макросы и расширяя возможности `async`/`await`.",
+            "Теперь компилятор лучше справляется с утечками памяти и предупреждает потенциальные ошибки управления ресурсами."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "async fn fetch_data() -> Result<String, reqwest::Error> {\n    let response = reqwest::get(\"https://api.example.com/data\").await?;\n    response.text().await\n}"
+        },
+        {
+          "id": "3",
+          "type": "TEXT",
+          "paragraphs": [
+            "Новая версия улучшает поддержку асинхронного программирования, позволяя писать более эффективный и безопасный код."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "16",
+      "userId": "1",
+      "title": "Node.js 21: Что нового?",
+      "subtitle": "Обновления и улучшения в последней версии Node.js",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg",
+      "views": 3125,
+      "createdAt": "15.03.2025",
+      "type": [
+        "Backend"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Обновленный V8 и поддержка ECMAScript",
+          "paragraphs": [
+            "Node.js 21 получил обновление до V8 12.1, что привело к значительному улучшению производительности.",
+            "Поддержка новых возможностей ECMAScript, включая `Temporal API`, упрощает работу с датами и временем."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "const now = Temporal.Now.plainDateTimeISO();\nconsole.log(now.toString());"
+        },
+        {
+          "id": "3",
+          "type": "TEXT",
+          "paragraphs": [
+            "Теперь работа с датами в Node.js стала проще и удобнее благодаря `Temporal API`."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "17",
+      "userId": "1",
+      "title": "Vue 4: Чего ожидать?",
+      "subtitle": "Предстоящие изменения в Vue.js 4",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg",
+      "views": 2780,
+      "createdAt": "18.03.2025",
+      "type": [
+        "Frontend"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Composition API станет основным",
+          "paragraphs": [
+            "В Vue 4 основной упор сделан на `Composition API`, что позволяет более гибко управлять состоянием компонентов.",
+            "Также улучшена производительность рендеринга и добавлена встроенная поддержка SSR без дополнительных библиотек."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "import { ref } from 'vue';\n\nexport default {\n  setup() {\n    const count = ref(0);\n    return { count };\n  }\n};"
+        },
+        {
+          "id": "3",
+          "type": "TEXT",
+          "paragraphs": [
+            "Теперь компоненты Vue 4 по умолчанию используют `setup()`, что упрощает управление состоянием."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "18",
+      "userId": "2",
+      "title": "Deno 2.0: Будущее серверного JavaScript",
+      "subtitle": "Как Deno развивается и чем он лучше Node.js?",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Deno_2021.svg",
+      "views": 2450,
+      "createdAt": "20.03.2025",
+      "type": [
+        "Backend"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Новые возможности Deno 2.0",
+          "paragraphs": [
+            "Deno 2.0 предлагает встроенную поддержку npm-пакетов, что упрощает миграцию проектов с Node.js.",
+            "Теперь Deno поддерживает `fetch()` на сервере нативно и включает улучшенную систему кеширования."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "import express from 'npm:express';\nconst app = express();\napp.get('/', (req, res) => res.send('Hello Deno!'));\napp.listen(3000);"
+        },
+        {
+          "id": "3",
+          "type": "TEXT",
+          "paragraphs": [
+            "Теперь можно использовать npm-библиотеки напрямую, без необходимости в `node_modules`."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "19",
+      "userId": "2",
+      "title": "React 19: Что нового?",
+      "subtitle": "Последние изменения в React и Concurrent Rendering",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
+      "views": 3500,
+      "createdAt": "22.03.2025",
+      "type": [
+        "Frontend"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Concurrent Rendering и улучшения Suspense",
+          "paragraphs": [
+            "React 19 получил значительные улучшения в `Concurrent Rendering`, что позволяет быстрее загружать страницы и рендерить компоненты без блокировки UI.",
+            "Теперь `Suspense` поддерживает асинхронные операции в Server Components, что ускоряет рендеринг контента."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "const DataComponent = React.lazy(() => import('./DataComponent'));\n\nexport default function App() {\n  return (\n    <Suspense fallback={<div>Loading...</div>}>\n      <DataComponent />\n    </Suspense>\n  );\n}"
+        },
+        {
+          "id": "3",
+          "type": "TEXT",
+          "paragraphs": [
+            "Теперь `Suspense` может использоваться для рендеринга данных без дополнительного состояния загрузки, что делает код чище и эффективнее."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "20",
+      "userId": "2",
+      "title": "TypeScript 6.0: Какие изменения?",
+      "subtitle": "Обновления в TypeScript, поддержка новых возможностей",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg",
+      "views": 2750,
+      "createdAt": "24.03.2025",
+      "type": [
+        "Programming"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Поддержка Variadic Tuples и новые типы",
+          "paragraphs": [
+            "TypeScript 6.0 добавляет поддержку `Variadic Tuple Types`, что позволяет создавать гибкие типы для массивов и аргументов функций.",
+            "Теперь можно использовать `satisfies` оператор для уточнения типов и проверки соответствия."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "type LogLevel = 'debug' | 'info' | 'warn' | 'error';\nconst level: LogLevel = 'debug' satisfies string;"
+        },
+        {
+          "id": "3",
+          "type": "TEXT",
+          "paragraphs": [
+            "Оператор `satisfies` помогает упростить аннотацию типов и делает код безопаснее."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "21",
+      "userId": "2",
+      "title": "React 19: Что нового?",
+      "subtitle": "Последние изменения в React и Concurrent Rendering",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
+      "views": 3500,
+      "createdAt": "22.03.2025",
+      "type": [
+        "Frontend"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Concurrent Rendering и улучшения Suspense",
+          "paragraphs": [
+            "React 19 получил значительные улучшения в `Concurrent Rendering`, что позволяет быстрее загружать страницы и рендерить компоненты без блокировки UI.",
+            "Теперь `Suspense` поддерживает асинхронные операции в Server Components, что ускоряет рендеринг контента."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "const DataComponent = React.lazy(() => import('./DataComponent'));\n\nexport default function App() {\n  return (\n    <Suspense fallback={<div>Loading...</div>}>\n      <DataComponent />\n    </Suspense>\n  );\n}"
+        },
+        {
+          "id": "3",
+          "type": "TEXT",
+          "paragraphs": [
+            "Теперь `Suspense` может использоваться для рендеринга данных без дополнительного состояния загрузки, что делает код чище и эффективнее."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "22",
+      "userId": "1",
+      "title": "TypeScript 6.0: Какие изменения?",
+      "subtitle": "Обновления в TypeScript, поддержка новых возможностей",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg",
+      "views": 2750,
+      "createdAt": "24.03.2025",
+      "type": [
+        "Programming"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Поддержка Variadic Tuples и новые типы",
+          "paragraphs": [
+            "TypeScript 6.0 добавляет поддержку `Variadic Tuple Types`, что позволяет создавать гибкие типы для массивов и аргументов функций.",
+            "Теперь можно использовать `satisfies` оператор для уточнения типов и проверки соответствия."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "type LogLevel = 'debug' | 'info' | 'warn' | 'error';\nconst level: LogLevel = 'debug' satisfies string;"
+        },
+        {
+          "id": "3",
+          "type": "TEXT",
+          "paragraphs": [
+            "Оператор `satisfies` помогает упростить аннотацию типов и делает код безопаснее."
+          ]
+        }
+      ]
+    }
+  ]
 }

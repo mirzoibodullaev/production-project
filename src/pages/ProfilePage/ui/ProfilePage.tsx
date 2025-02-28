@@ -23,6 +23,7 @@ import { Currency } from "entities/Currency";
 import { Country } from "entities/Country";
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
+import { Page } from "shared/ui/Page/Page";
 import cls from "./ProfilePage.module.scss";
 
 const reducer: ReducerList = {
@@ -122,7 +123,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducer} removeAfterUnmount>
-            <div className={classNames(cls.ProfilePage, {}, [className])}>
+            <Page className={classNames(cls.ProfilePage, {}, [className])}>
                 <ProfilePageHeader />
                 {validateErrors?.length &&
                     validateErrors.map((error) => (
@@ -146,7 +147,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
                     onChangeCurrency={onChangeCurrency}
                     onChangeCountry={onChangeCountry}
                 />
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 };

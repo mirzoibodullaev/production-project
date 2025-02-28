@@ -29,19 +29,6 @@ export const ArticleList = ({
     isLoading,
     view = ArticleView.GRID,
 }: ArticleListProps) => {
-    if (isLoading) {
-        return (
-            <div
-                className={classNames(cls.ArticleList, {}, [
-                    className,
-                    cls[view],
-                ])}
-            >
-                {getSkeletons(view)}
-            </div>
-        );
-    }
-
     const renderArticles = (article: Article) => {
         return (
             <ArticleListItem key={article.id} article={article} view={view} />
@@ -53,6 +40,7 @@ export const ArticleList = ({
             className={classNames(cls.ArticleList, {}, [className, cls[view]])}
         >
             {articles.length ? articles.map(renderArticles) : null}
+            {isLoading && getSkeletons(view)}
         </div>
     );
 };

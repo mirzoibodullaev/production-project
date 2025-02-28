@@ -18,10 +18,11 @@ import {
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { fetchArticlesList } from "../../model/services/fetchArticlesList/fetchArticlesList";
 import {
-    getArticlesPageError,
     getArticlesPageIsLoading,
     getArticlesPageView,
 } from "../../model/selectors/articlesPageSelectors";
+import { Page } from "shared/ui/Page/Page";
+import { fetchNextArticlesPage } from "../../model/services/fetchNextArticlesPage/fetchNextArticlesPage";
 import cls from "./ArticlesPage.module.scss";
 
 const reducer: ReducerList = {
@@ -37,11 +38,18 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
     const articles = useSelector(getArticles.selectAll);
     const view = useSelector(getArticlesPageView);
     const isLoading = useSelector(getArticlesPageIsLoading);
-    const error = useSelector(getArticlesPageError);
+
+    const onLoadNextPart = useCallback(() => {
+        dispatch(fetchNextArticlesPage());
+    }, [dispatch]);
 
     useEffect(() => {
-        dispatch(fetchArticlesList());
-        dispatch(articlesPageActions.initState())
+        dispatch(articlesPageActions.initState());
+        dispatch(
+            fetchArticlesList({
+                page: 1,
+            })
+        );
     }, [dispatch]);
 
     const onChangeView = useCallback(
@@ -53,14 +61,17 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducer} removeAfterUnmount>
-            <div className={classNames(cls.ArticlesPage, {}, [className])}>
+            <Page
+                onScrollEnd={onLoadNextPart}
+                className={classNames(cls.ArticlesPage, {}, [className])}
+            >
                 <ArticleViewSelector onViewClick={onChangeView} view={view} />
                 <ArticleList
                     isLoading={isLoading}
                     view={view}
                     articles={articles}
                 />
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 };

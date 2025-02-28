@@ -36,7 +36,6 @@
     }
 
     .textBlock {
-        min-height: 200px;
         overflow-y: hidden;
     }
 }
@@ -44,7 +43,7 @@
 .GRID {
     width: 230px;
     transition: 0.2s;
-    
+
     .date {
         display: none;
         position: absolute;
