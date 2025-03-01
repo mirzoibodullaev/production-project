@@ -16,13 +16,13 @@ import {
     getArticles,
 } from "../../model/slice/articlesPageSlice";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { fetchArticlesList } from "../../model/services/fetchArticlesList/fetchArticlesList";
 import {
     getArticlesPageIsLoading,
     getArticlesPageView,
 } from "../../model/selectors/articlesPageSelectors";
 import { Page } from "shared/ui/Page/Page";
 import { fetchNextArticlesPage } from "../../model/services/fetchNextArticlesPage/fetchNextArticlesPage";
+import { initArticlesPage } from "../../model/services/initArticlesPage/initArticlesPage";
 import cls from "./ArticlesPage.module.scss";
 
 const reducer: ReducerList = {
@@ -44,12 +44,7 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
     }, [dispatch]);
 
     useEffect(() => {
-        dispatch(articlesPageActions.initState());
-        dispatch(
-            fetchArticlesList({
-                page: 1,
-            })
-        );
+        dispatch(initArticlesPage());
     }, [dispatch]);
 
     const onChangeView = useCallback(
@@ -60,7 +55,7 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
     );
 
     return (
-        <DynamicModuleLoader reducers={reducer} removeAfterUnmount>
+        <DynamicModuleLoader reducers={reducer} removeAfterUnmount={false}>
             <Page
                 onScrollEnd={onLoadNextPart}
                 className={classNames(cls.ArticlesPage, {}, [className])}
