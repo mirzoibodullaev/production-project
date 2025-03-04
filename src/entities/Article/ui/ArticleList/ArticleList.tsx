@@ -3,6 +3,8 @@ import { Article, ArticleView } from "../../model/types/article";
 import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
 import { ArticleListItemSkeleton } from "../ArticleListItem/ArticleListItemSkeleton";
 import cls from "./ArticleList.module.scss";
+import { useTranslation } from "react-i18next";
+import { Skeleton } from "shared/ui/Skeleton/ui/Skeleton";
 
 interface ArticleListProps {
     articles: Article[];

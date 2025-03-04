@@ -1,4 +1,18 @@
 {
     "Статья не найдена": "Article not found",
-    "Читать далее...": "Read more..."
+    "Читать далее...": "Read more...",
+    "возрастанию": "ascending",
+    "убыванию": "descending",
+    "просмотрам": "by views",
+    "Сортировать ПО": "Sort BY",
+    "по": "by",
+    "ИТ": "IT",
+    "Фронтенд": "Frontend",
+    "Статьи не найдены": "No articles found",
+    "Программирование": "Programming",
+    "Бэкенд": "Backend",
+    "Все статьи": "All",
+    "названию": "by title",
+    "дате созданию": "by creation date",
+    "Поиск": "Search"
 }

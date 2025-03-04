@@ -14,7 +14,7 @@ const meta: Meta<typeof Select> = {
             { value: "option1", content: "Опция 1" },
             { value: "option2", content: "Опция 2" },
             { value: "option3", content: "Опция 3" },
-        ] as SelectOptions[],
+        ] as Array<SelectOptions<string>>
     },
 };
 
