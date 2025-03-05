@@ -5,26 +5,25 @@ import {
     UnknownAction,
 } from "@reduxjs/toolkit";
 import { AxiosInstance } from "axios";
-import { NavigateOptions, To } from "react-router-dom";
 import { ProfileSchema } from "entities/Profile";
 import { UserSchema } from "entities/User";
 import { LoginSchema } from "features/AuthByUsername";
 import { AppDispatch } from "./store";
 import { ArticleDetailsSchema } from "entities/Article";
-import { ArticleDetailsCommentsSchema } from "pages/ArticleDetailsPage";
+import { ArticleDetailsPageSchema } from "pages/ArticleDetailsPage";
 import { AddCommentFormSchema } from "features/AddCommentForm";
 import { ArticlesPageSchema } from "pages/ArticlesPage";
 import { ScrollSchema } from "widgets/ScrollSave";
 
 export interface StateSchema {
     user: UserSchema;
-    scroll: ScrollSchema
+    scroll: ScrollSchema;
     loginForm?: LoginSchema;
     profile?: ProfileSchema;
     articles?: ArticleDetailsSchema;
-    articleDetailsComments?: ArticleDetailsCommentsSchema;
     addCommentForm?: AddCommentFormSchema;
     articlesPage?: ArticlesPageSchema;
+    articleDetailsPage?: ArticleDetailsPageSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;
