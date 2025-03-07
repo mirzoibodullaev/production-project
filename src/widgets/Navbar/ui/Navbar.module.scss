@@ -11,6 +11,50 @@
     margin-left: auto;
 }
 
-.mainLink {
-    margin-right: 15px;
+.menuWrapper {
+    position: absolute;
+    right: 20px;
+    top: 5px;
+}
+
+.menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--inverted-bg-color);
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    min-width: 150px;
+    z-index: 10;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+
+    &.menuOpen {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.menuItem {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+    cursor: pointer;
+    color: var(--inverted-primary-color);
+    transition: background 0.3s ease, transform 0.2s ease;
+
+    &:hover {
+        border-radius: 6px;
+        background: var(--primary-color);
+    }
+}
+
+.menuItem.logout {
+    color: red;
+}
+
+.avatar {
+    border: 1px solid var(--inverted-primary-color);
 }
